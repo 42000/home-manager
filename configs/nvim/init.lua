@@ -1,0 +1,5 @@
+require('config.lsp_setup')
+require('config.colorscheme')
+require('config.keymaps')
+require('config.options')
+require('config.autocommands')
