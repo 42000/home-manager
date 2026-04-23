@@ -62,7 +62,7 @@ require("nvim-surround").setup({
         ${builtins.readFile ./nvim/options.lua}
         ${builtins.readFile ./nvim/autocommands.lua}
         ${builtins.readFile ./nvim/lsp.lua}
-        vim.cmd("colorscheme gruvbox")
+        vim.cmd("colorscheme onedark")
     '';
   };
     home.packages = with pkgs; [
