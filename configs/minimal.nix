@@ -7,6 +7,7 @@
     home.packages = with pkgs; [
         fzf
         git-credential-manager
+        libqalculate
     ];
     programs = {
         command-not-found.enable = true;
@@ -32,6 +33,7 @@
       initExtraFirst = ''
           alias vim='nvim'
           alias v='nvim'
+          alias c='qalc'
           alias ls='ls --color=auto'
           alias l="ls -lah"
           alias grep='grep --color=auto'
