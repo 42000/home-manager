@@ -1,8 +1,8 @@
 { config, pkgs, lib, ... }:
 {
     imports = [
-        ./configs/i3.nix
-        ./configs/taf.nix
+        ./i3.nix
+        ./taf.nix
     ];
 
     fonts.fontconfig.enable = true;
