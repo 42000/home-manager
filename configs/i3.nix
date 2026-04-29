@@ -29,6 +29,7 @@
 
         config = rec {
             modifier = "Mod4";
+            terminal = "gnome-terminal";
             bars = [
             {
             fonts = {
@@ -59,7 +60,7 @@
                 "XF86AudioRaiseVolume" = "exec amixer set Master 4%+";
                 "XF86MonBrightnessDown" = "exec brightnessctl set 4%-";
                 "XF86MonBrightnessUp" = "exec brightnessctl set 4%+";
-                "${modifier}+Return" = "exec /usr/bin/gnome-terminal";
+                "${modifier}+Return" = "exec ${terminal}";
                 "${modifier}+d" = "exec ${pkgs.rofi}/bin/rofi -modi drun -show drun";
                 "${modifier}+Shift+d" = "exec ${pkgs.rofi}/bin/rofi -show window";
                 "${modifier}+b" = "exec /usr/bin/google-chrome";
@@ -79,7 +80,8 @@
                 "${modifier}+c" = "kill";
 
                 "${modifier}+Shift+x" = "exec i3-msg exit";
-                "${modifier}+x" = "exec i3lock";
+                "${modifier}+x" = "exec i3lock -c 222222";
+
             };
             startup = [
             {
