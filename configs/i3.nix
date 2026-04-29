@@ -81,7 +81,6 @@
                 "${modifier}+Shift+x" = "exec i3-msg exit";
                 "${modifier}+x" = "exec i3lock";
             };
-
             startup = [
             {
                 command = ''
