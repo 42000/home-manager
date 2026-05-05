@@ -7,5 +7,6 @@
     # marche pas sans sudo, balek c'est électron de tt facon
     # drawio
     gimp
+    inkscape
   ];
 }

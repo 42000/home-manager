@@ -1,28 +1,6 @@
 {pkgs, lib, ... }:
 
 {
-# NE MARCHE PAS
-  #     xsession.xrandrHeads = [
-  #   {
-  #     output = "eDP-1";
-  #     monitorConfig = ''
-  #       Option "DPMS" "false"
-  #     '';
-  #   }
-  #   {
-  #     output = "DP3-1";
-  #     primary = true;
-  #     monitorConfig = ''
-  #       Option "DPMS" "false"
-  #     '';
-  #   }
-  #   {
-  #     output = "DP3-3";
-  #     monitorConfig = ''
-  #       Option "DPMS" "false"
-  #     '';
-  #   }
-  # ];
     xsession.windowManager.i3 = {
         enable = true;
         package = pkgs.i3;
@@ -35,19 +13,28 @@
             fonts = {
                 names = ["CaskaydiaMono Nerd Font"];
                 style = "Bold Semi-Condensed";
-                size = 12.0;
+                size = 14.0;
             };
                 position = "top";
                 statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ~/.config/i3status-rust/config-top.toml";
             }
             ];
 
-            window.border = 0;
-
-            gaps = {
-                inner = 4;
-                outer = 4;
+            window.border = 4;
+            colors = {
+                focused = {
+                    background = "#4da9fa";
+                    border = "#4c7899";
+                    childBorder = "#4da9fa";
+                    indicator = "#2e9ef4";
+                    text = "#ffffff";
+                };
             };
+            #
+            # gaps = {
+            #     inner = 0;
+            #     outer = 0;
+            # };
             fonts = {
                 names = ["CaskaydiaMono Nerd Font"];
                 style = "Bold Semi-Condensed";
@@ -55,17 +42,16 @@
             };
 
             keybindings = lib.mkOptionDefault {
-                "XF86AudioMute" = "exec amixer set Master toggle";
-                "XF86AudioLowerVolume" = "exec amixer set Master 4%-";
-                "XF86AudioRaiseVolume" = "exec amixer set Master 4%+";
-                "XF86MonBrightnessDown" = "exec brightnessctl set 4%-";
-                "XF86MonBrightnessUp" = "exec brightnessctl set 4%+";
+                # "XF86AudioMute" = "exec amixer set Master toggle";
+                # "XF86AudioLowerVolume" = "exec amixer set Master 4%-";
+                # "XF86AudioRaiseVolume" = "exec amixer set Master 4%+";
+                # "XF86MonBrightnessDown" = "exec brightnessctl set 4%-";
+                # "XF86MonBrightnessUp" = "exec brightnessctl set 4%+";
                 "${modifier}+Return" = "exec ${terminal}";
                 "${modifier}+d" = "exec ${pkgs.rofi}/bin/rofi -modi drun -show drun";
                 "${modifier}+Shift+d" = "exec ${pkgs.rofi}/bin/rofi -show window";
                 "${modifier}+b" = "exec /usr/bin/google-chrome";
-                "${modifier}+e" = "exec /usr/bin/nautilus";
-
+                "${modifier}+Shift+f" = "exec /usr/bin/nautilus";
 
                 "${modifier}+h" = "focus left";
                 "${modifier}+l" = "focus right";
@@ -78,10 +64,10 @@
                 "${modifier}+Shift+k" = "move up";
 
                 "${modifier}+c" = "kill";
+                "ALT+F4" = "kill";
 
-                "${modifier}+Shift+x" = "exec i3-msg exit";
+                # "${modifier}+Shift+x" = "exec i3-msg exit";
                 "${modifier}+x" = "exec i3lock -c 222222";
-
             };
             startup = [
             {
