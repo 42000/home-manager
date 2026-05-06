@@ -51,7 +51,7 @@
                 "${modifier}+d" = "exec ${pkgs.rofi}/bin/rofi -modi drun -show drun";
                 "${modifier}+Shift+d" = "exec ${pkgs.rofi}/bin/rofi -show window";
                 "${modifier}+b" = "exec /usr/bin/google-chrome";
-                "${modifier}+Shift+f" = "exec /usr/bin/nautilus";
+                "${modifier}+Shift+f" = "exec ${pkgs.kdePackages.dolphin}/bin/dolphin";
 
                 "${modifier}+h" = "focus left";
                 "${modifier}+l" = "focus right";
@@ -115,12 +115,12 @@
                 { block = "cpu"; }
                 {
                     block = "disk_space";
-                    path = "/";
+                    path = "/home/ts280586/";
                     info_type = "available";
                     interval = 20;
                     warning = 20.0;
                     alert = 10.0;
-                    format = " $icon root: $available.eng(w:2) ";
+                    format = " $icon home: $available.eng(w:2) ";
                 }
                 {
                     block = "memory";
