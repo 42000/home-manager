@@ -13,7 +13,7 @@
             fonts = {
                 names = ["CaskaydiaMono Nerd Font"];
                 style = "Bold Semi-Condensed";
-                size = 14.0;
+                size = 16.0;
             };
                 position = "top";
                 statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ~/.config/i3status-rust/config-top.toml";
@@ -52,6 +52,7 @@
                 "${modifier}+Shift+d" = "exec ${pkgs.rofi}/bin/rofi -show window";
                 "${modifier}+b" = "exec /usr/bin/google-chrome";
                 "${modifier}+Shift+f" = "exec ${pkgs.kdePackages.dolphin}/bin/dolphin";
+                "${modifier}+e" = "exec nautilus";
 
                 "${modifier}+h" = "focus left";
                 "${modifier}+l" = "focus right";
@@ -62,6 +63,10 @@
                 "${modifier}+Shift+l" = "move right";
                 "${modifier}+Shift+j" = "move down";
                 "${modifier}+Shift+k" = "move up";
+
+                # marche pas, whatever
+                # "${modifier}+button4" = "workspace prev";
+                # "${modifier}+button5" = "workspace next";
 
                 "${modifier}+c" = "kill";
                 "ALT+F4" = "kill";
@@ -79,7 +84,7 @@
             }
             {
                 command = ''
-                    exec xrandr --output eDP-1 --auto && xrandr --output DP-3-3 --primary --auto --right-of eDP-1 && xrandr --output DP-3-1 --rotate left --auto --right-of DP-3-3
+                    exec xrandr --output eDP-1 --auto && xrandr --output DP-5-3 --primary --auto --right-of eDP-1 && xrandr --output DP-5-1 --rotate left --auto --right-of DP-5-3
                     '';
                 always = true;
                 notification = false;

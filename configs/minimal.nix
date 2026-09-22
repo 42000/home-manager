@@ -44,6 +44,8 @@
           setopt PROMPT_SUBST
           PROMPT='%F{green} %%%f '
           RPROMPT='%~ %B%F{blue}%m%b%f'
+
+          sh $HOME/monitors_setup.sh
       '';
       # plugins = [
       #   {
